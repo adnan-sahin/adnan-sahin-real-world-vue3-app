@@ -6,10 +6,8 @@
     "start:api:prod": "npx json-server db.json --port 10001",
     "dev": "vite",
     "start": "run-p start:api:dev dev",
-    "build:start:dev": "vite build",
-    "build:start:prod": "vite build --mode production",
-    "build": "run-p start:api:dev build:start",
-    "build:prod": "run-p build:start:prod start:api:prod",
+    "build:start:dev": "vite build --mode development",
+    "build:prod": "vite build --mode production",
     "preview": "vite preview --port 4173",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
@@ -26,7 +24,6 @@
     "@vue/eslint-config-prettier": "^7.0.0",
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
-    "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
     "vite": "^3.0.9"
   }
