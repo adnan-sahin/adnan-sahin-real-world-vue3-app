@@ -2,17 +2,12 @@
   "name": "real-world-vue",
   "version": "0.0.0",
   "scripts": {
-    "start:api": "npx json-server db.json",
     "dev": "vite",
-    "start": "run-p start:api dev",
-    "build:start": "vite build",
-    "build": "run-p start:api build:start",
+    "build": "vite build",
     "preview": "vite preview --port 4173",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "axios": "^1.7.2",
-    "json-server": "^1.0.0-beta.1",
     "pinia": "^2.0.21",
     "vue": "^3.2.38",
     "vue-router": "^4.1.5"
