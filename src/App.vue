@@ -1,9 +1,15 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router';
+import { inject } from 'vue';
+
+const GlobalStore = inject('GlobalStore');
 </script>
 
 <template>
   <div id="layout">
+    <div id="flashMessage" v-if="GlobalStore.flashMessage">
+      {{ GlobalStore.flashMessage }}
+    </div>
     <header>
       <div class="wrapper">
         <nav>
@@ -17,6 +23,20 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style>
+@keyframes yellowfade {
+  from {
+    background: yellow;
+  }
+  to {
+    background: transparent;
+  }
+}
+
+#flashMessage {
+  animation-name: yellowfade;
+  animation-duration: 3s;
+}
+
 #layout {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
