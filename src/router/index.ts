@@ -6,11 +6,12 @@ import EventEdit from '../views/event/Edit.vue';
 import EventRegister from '../views/event/Register.vue';
 import NotFound from '../views/NotFound.vue';
 import NetworkError from '../views/NetworkError.vue';
-import store from '@/GlobalStore.js';
+import store from '@/GlobalStore';
 
 //Lazy loading
-const About = () =>
-  import(/* webpackChunkName: "about" */ '../views/About.vue');
+function About() {
+  return import(/* webpackChunkName: "about" */ '../views/About.vue');
+}
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

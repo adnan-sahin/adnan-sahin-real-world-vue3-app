@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import EventService from '@/services/EventService.js';
+import EventService from '@/services/EventService';
 import { useRouter } from 'vue-router';
 import { EventItem } from '@/types';
 
