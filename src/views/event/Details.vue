@@ -1,5 +1,12 @@
-<script setup>
-const props = defineProps(['event']);
+<script setup lang="ts">
+import { PropType } from 'vue';
+import { EventItem } from '@/types';
+defineProps({
+  event: {
+    type: Object as PropType<EventItem>,
+    required: true,
+  },
+});
 </script>
 
 <template>

@@ -1,8 +1,9 @@
-<script setup>
+<script setup lang="ts">
 import EventCard from '@/components/EventCard.vue';
 import { ref, onMounted, computed, watchEffect } from 'vue';
 import EventService from '@/services/EventService.js';
 import { useRouter } from 'vue-router';
+import { EventItem } from '@/types';
 
 const router = useRouter();
 
@@ -15,7 +16,7 @@ const hasNextPage = computed(() => {
   return page.value < totalPages;
 });
 
-const events = ref(null);
+const events = ref([] as EventItem[]);
 const totalEvents = ref(0);
 
 onMounted(() => {
