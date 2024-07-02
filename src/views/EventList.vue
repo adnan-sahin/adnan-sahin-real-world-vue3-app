@@ -21,7 +21,7 @@ const totalEvents = ref(0);
 
 onMounted(() => {
   watchEffect(() => {
-    events.value = null;
+    events.value = [];
     EventService.getEvents(2, page.value)
       .then((response) => {
         events.value = response.data;
