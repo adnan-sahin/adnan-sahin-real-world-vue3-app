@@ -16,7 +16,7 @@ const hasNextPage = computed(() => {
   return page.value < totalPages;
 });
 
-const events = ref([] as EventItem[]);
+const events = ref<EventItem[]>();
 const totalEvents = ref(0);
 
 onMounted(() => {

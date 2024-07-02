@@ -12,7 +12,7 @@ const props = defineProps({
     required: true,
   },
 });
-const event = ref({} as EvenItem);
+const event = ref<EventItem>();
 
 onMounted(() => {
   EventService.getEvent(props.id)
